@@ -6,8 +6,6 @@ import Favorites from "./pages/Favorites";
 import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
-  //localhose:3000/
-  // my-page.com
   return (
     <>
       <MainNavigation />
