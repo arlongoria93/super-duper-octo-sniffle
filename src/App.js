@@ -5,7 +5,21 @@ import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
 
 function App() {
-  return <></>;
+  //localhose:3000/
+  // my-page.com
+  return (
+    <>
+      <Route path="/">
+        <AllMeetupsPage />
+      </Route>
+      <Route path="/new-meetups">
+        <NewMeetupPage />
+      </Route>
+      <Route path="/favorites">
+        <FavoritesPage />
+      </Route>
+    </>
+  );
 }
 
 export default App;
