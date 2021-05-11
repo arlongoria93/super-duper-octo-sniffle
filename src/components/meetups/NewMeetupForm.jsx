@@ -3,24 +3,28 @@ import { useRef } from "react";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
-function NewMeetupForm() {
+function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
   const descInputRef = useRef();
+
   function submitHandler(event) {
     event.preventDefault();
+
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current;
-    const enteredDesc = descInputRef.current;
+    const enteredAddress = addressInputRef.current.value;
+    const enteredDescription = descInputRef.current.value;
+
     const meetupData = {
       title: enteredTitle,
       image: enteredImage,
       address: enteredAddress,
-      desc: enteredDesc,
+      description: enteredDescription,
     };
-    console.log(meetupData);
+
+    props.onAddMeetup(meetupData);
   }
 
   return (
